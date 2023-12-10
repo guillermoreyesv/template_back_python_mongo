@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  # Servicio para la aplicación FastAPI
+  python:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - FASTAPI_HOST=0.0.0.0
+      - FASTAPI_PORT=8000
+    ports:
+      - "8001:8000"
+    depends_on:
+      - mongo
+
+  # Servicio para MongoDB
+  mongo:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=adminpassword
+      - MONGO_INITDB_DATABASE=mydatabase
+    ports:
+      - "27017:27017"
+
+  # FRONT
+  react:
+    image: front
+    ports:
+        - "8080:80"
+    depends_on:
+      - python
