@@ -1,12 +1,7 @@
-# BACK_UBICAFEST
+# TEMPLATE_BACK_PYTHON_MONGO
 
 **Description:**
-UbicaFest API is a modern and efficient RESTful API built with Python, FastAPI, and MongoDB. The project seamlessly integrates CRUD (Create, Read, Update, Delete) operations for managing users, events, and tickets.
-
-**Key Features:**
-- **User Management:** Create, retrieve, update, and delete user profiles with ease.
-- **Event Operations:** Manage events effortlessly by performing CRUD operations to handle event details, schedules, and FAQs.
-- **Ticket System:** Facilitate ticket transactions, allowing users to purchase and access event tickets seamlessly.
+This is a template for create a microservice in python using fastapi + pymongo.
 
 **Technology Stack:**
 - **FastAPI:** Utilizing the power of FastAPI for fast development, automatic OpenAPI and JSON Schema generation, and high performance.
@@ -54,15 +49,15 @@ uvicorn main:app --reload --port 8001
 ```
 
 ## 6. Build Docker Image
-Builds a Docker image for the project and tags it as back-ubicafest.
+Builds a Docker image for the project and tags it as back-template.
 ```
-docker build -t back-ubicafest .
+docker build -t back-template .
 ```
 
 ## 7. Run Docker Container
-Runs a Docker container in detached mode (-d), maps port 8001 on the host to port 8000 in the container, and names the container back-ubicafest.
+Runs a Docker container in detached mode (-d), maps port 8001 on the host to port 8000 in the container, and names the container back-template.
 ```
-docker run -d -p 8001:8000 --name back-ubicafest back-ubicafest
+docker run -d -p 8001:8000 --name back-template back-template
 ```
 
 ## 8. Run Docker Compose
